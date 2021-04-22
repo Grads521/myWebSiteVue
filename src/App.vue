@@ -1,16 +1,15 @@
 <template>
-  <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="App">
+     <Header />
   </div>
 </template>
 
 <script>
-  import HelloWorld from './components/header.vue'
-
+  import Header from '@/components/header'
   export default {
     name: 'App',
     components: {
-      HelloWorld
+        Header
     }
   }
 </script>
