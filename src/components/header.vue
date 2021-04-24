@@ -9,21 +9,6 @@
                 </nav>
             </div>
         </header>
-        <main>
-            <div class="wrapper">
-                <div><img src="photo1.jpg" width="20%" height="20%"></div>
-
-                <div class="fio"></div>
-
-                <div class="phone" hidden>
-                    89211834241
-                </div>
-
-                <button class="show-phone">
-                    Показать телефон
-                </button>
-            </div>
-        </main>
     </div>
 </template>
 
