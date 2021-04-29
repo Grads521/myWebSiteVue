@@ -14,31 +14,13 @@
 
 
 <script>
-    // export default {
-    //   name: 'HelloWorld',
-    //   props: {
-    //     msg: String
-    //   }
-    // }
 </script>
 
 
 <style scoped>
-    * {
-        padding: 0;
-        margin: 0;
-        font-family: Geometria, sans-serif;
-    }
-    /*@font-face {*/
-    /*    font-family: "Geometria";*/
-    /*    src: url("fonts/geometria.ttf") format("opentype");*/
-    /*}*/
     .positioner {
         width: 1024px;
         margin: 0 auto;
-    }
-    body {
-        background-color: #1c1a1a;
     }
     header {
         margin: 0;
@@ -59,18 +41,14 @@
     .menu-container nav {
         padding-left: 10px;
     }
-
     .menu-container nav a {
         padding: 8px 10px;
     }
-
     .menu-container a {
         color: #130621;
         text-decoration: none;
     }
-
     .menu-container li {
         display: inline-block;
     }
 </style>
-
