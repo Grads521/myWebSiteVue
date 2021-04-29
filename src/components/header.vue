@@ -1,27 +1,19 @@
 <template>
-    <div class="positioner">
-        <header>
-            <div class="menu-container">
-                <nav>
-                    <li class=""><a href="" class="">Биография</a></li>
-                    <li class=""><a href="" class="">Достижения</a></li>
-                    <li class=""><a href="" class="">Викторина</a></li>
-                </nav>
-            </div>
-        </header>
-    </div>
+    <header>
+        <div class="menu-container">
+            <nav>
+                <li class=""><a href="" class="">Биография</a></li>
+                <li class=""><a href="" class="">Достижения</a></li>
+                <li class=""><a href="" class="">Викторина</a></li>
+            </nav>
+        </div>
+    </header>
 </template>
-
 
 <script>
 </script>
 
-
 <style scoped>
-    .positioner {
-        width: 1024px;
-        margin: 0 auto;
-    }
     header {
         margin: 0;
         padding-top: 5px;
