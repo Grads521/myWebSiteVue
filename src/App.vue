@@ -1,6 +1,8 @@
 <template>
   <div>
-    <Header />
+    <div>
+      <Header />
+    </div>
   </div>
 </template>
 

@@ -5,7 +5,7 @@
                 <nav>
                     <li class=""><a href="" class="">Биография</a></li>
                     <li class=""><a href="" class="">Достижения</a></li>
-                    <li class=""><a href="" class="">Викторина</a></li>
+                    <li class=""><a href="" class="">Виктоина</a></li>
                 </nav>
             </div>
         </header>
