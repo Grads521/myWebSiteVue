@@ -1,14 +1,16 @@
 <template>
   <div class="positioner">
     <Header />
+    <Main />
   </div>
 </template>
 
 <script>
   import Header from '@/components/header'
+  import Main from '@/components/main'
   export default {
     components: {
-      Header
+      Header,Main
     }
   }
 </script>
