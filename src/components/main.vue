@@ -1,7 +1,9 @@
 <template>
     <main>
         <div class="wrapper">
-            <div><img src="src/Photo1.jpg" width="20%" height="20%"></div>
+            <div>
+                <img v-bind:src="require('/public/images/photo1.jpg')" alt="" width="20%" height="20%"/>
+            </div>
 
             <div class="fio"></div>
 
@@ -17,6 +19,30 @@
 </template>
 
 <script>
+    export default {
+        mounted() {
+            document.querySelector('.fio').textContent = 'Исаев Максим Сергеевич';
+
+            const buttonPhone = document.querySelector('.show-phone');
+
+            buttonPhone.addEventListener('click', togglePhone);
+
+            let isPhoneInvisible = true;
+
+            function togglePhone() {
+                if (isPhoneInvisible === false) {
+                    isPhoneInvisible = true;
+                    buttonPhone.textContent = 'Показать телефон';
+
+                } else {
+                    isPhoneInvisible = false
+                    buttonPhone.textContent = 'Скрыть телефон';
+                }
+                const showPhone = document.querySelector('.phone');
+                showPhone.hidden = isPhoneInvisible;
+            }
+        }
+    }
 </script>
 
 <style scoped>

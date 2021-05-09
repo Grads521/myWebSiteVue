@@ -10,7 +10,7 @@
   import Main from '@/components/main'
   export default {
     components: {
-      Header,Main
+      Header, Main
     }
   }
 </script>
