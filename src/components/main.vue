@@ -5,47 +5,40 @@
                 <img v-bind:src="require('/public/images/photo1.jpg')" alt="" width="20%" height="20%"/>
             </div>
 
-            <div class="fio"></div>
-
-            <div class="phone" hidden>
-                89211834241
+            <div class="fio">
+                <p>{{ fio }}</p>
             </div>
 
-            <button class="show-phone">
-                Показать телефон
+            <transition name="fade">
+                <p v-if="show">89211834241</p>
+            </transition>
+
+            <button v-on:click="show = !show">
+                <p>Скрыть телефон</p>
             </button>
+
         </div>
     </main>
 </template>
 
 <script>
     export default {
-        mounted() {
-            document.querySelector('.fio').textContent = 'Исаев Максим Сергеевич';
-
-            const buttonPhone = document.querySelector('.show-phone');
-
-            buttonPhone.addEventListener('click', togglePhone);
-
-            let isPhoneInvisible = true;
-
-            function togglePhone() {
-                if (isPhoneInvisible === false) {
-                    isPhoneInvisible = true;
-                    buttonPhone.textContent = 'Показать телефон';
-
-                } else {
-                    isPhoneInvisible = false
-                    buttonPhone.textContent = 'Скрыть телефон';
-                }
-                const showPhone = document.querySelector('.phone');
-                showPhone.hidden = isPhoneInvisible;
+        data() {
+            return {
+                fio: 'Исаев Максим Сергеевич',
+                show: true,
             }
-        }
+        },
     }
 </script>
 
 <style scoped>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
+    }
     main {
         position: relative;
         background-color: #cd9c71;
