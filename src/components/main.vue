@@ -10,10 +10,10 @@
             </div>
 
             <transition name="fade">
-                <p v-if="show">89211834241</p>
+                <p v-if="number">89211834241</p>
             </transition>
 
-            <button v-on:click="show = !show">
+            <button v-on:click="showNumber">
                 <p>Скрыть телефон</p>
             </button>
 
@@ -26,9 +26,14 @@
         data() {
             return {
                 fio: 'Исаев Максим Сергеевич',
-                show: true,
+                number: true,
             }
         },
+        methods: {
+            showNumber: function () {
+               this.number = !this.number;
+            }
+        }
     }
 </script>
 
