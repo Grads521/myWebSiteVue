@@ -10,7 +10,7 @@
             </div>
 
             <transition name="fade">
-                <p v-if="number">89211834241</p>
+                <p v-if="isPhoneInvisible">89211834241</p>
             </transition>
 
             <button v-on:click="showNumber">
@@ -26,12 +26,12 @@
         data() {
             return {
                 fio: 'Исаев Максим Сергеевич',
-                number: true,
+                isPhoneInvisible: true,
             }
         },
         methods: {
             showNumber: function () {
-               this.number = !this.number;
+               this.isPhoneInvisible = !this.isPhoneInvisible;
             }
         }
     }
