@@ -14,7 +14,7 @@
             </transition>
 
             <button v-on:click="togglePhoneVisibility">
-                <p>{{ isPhoneVisible ? 'Показать телефон' : ' Скрыть телефон' }}</p>
+                <p>{{ isPhoneVisible ? 'Скрыть телефон' : ' Показать телефон' }}</p>
             </button>
 
         </div>
