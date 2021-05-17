@@ -13,8 +13,8 @@
                 <p v-if="isPhoneVisible">89211834241</p>
             </transition>
 
-            <button v-on:click="showNumber">
-                <p>Скрыть телефон</p>
+            <button v-on:click="togglePhoneVisibility">
+                <p>{{ isPhoneVisible ? 'Показать телефон' : ' Скрыть телефон' }}</p>
             </button>
 
         </div>
@@ -26,11 +26,11 @@
         data() {
             return {
                 fio: 'Исаев Максим Сергеевич',
-                isPhoneVisible: true,
+                isPhoneVisible: false,
             }
         },
         methods: {
-            showNumber: function () {
+            togglePhoneVisibility: function () {
                this.isPhoneVisible = !this.isPhoneVisible;
             }
         }
