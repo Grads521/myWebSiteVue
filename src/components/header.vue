@@ -1,11 +1,9 @@
 <template>
     <header>
         <div class="menu-container">
-            <nav>
-                <li class=""><a href="" class="">Биография</a></li>
-                <li class=""><a href="" class="">Достижения</a></li>
-                <li class=""><a href="" class="">Викторина</a></li>
-            </nav>
+                <li @click="$router.push('/')"><a>Биография</a></li>
+                <li @click="$router.push('/myachievements')"><a>Достижения</a></li>
+                <li @click="$router.push('/mygame')"><a>Викторина</a></li>
         </div>
     </header>
 </template>
@@ -29,16 +27,12 @@
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
-    }
-    .menu-container nav {
         padding-left: 10px;
-    }
-    .menu-container nav a {
-        padding: 8px 10px;
     }
     .menu-container a {
         color: #130621;
         text-decoration: none;
+        padding: 8px 10px;
     }
     .menu-container li {
         display: inline-block;
