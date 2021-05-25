@@ -14,8 +14,6 @@
 <style scoped>
     header {
         margin: 0;
-        padding-top: 5px;
-        padding-bottom: 5px;
         list-style: none;
         background-color: #ffeb8f;
         width: 100%;
@@ -33,8 +31,5 @@
         color: #130621;
         text-decoration: none;
         padding: 8px 10px;
-    }
-    .menu-container li {
-        display: inline-block;
     }
 </style>
