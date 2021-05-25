@@ -5,9 +5,9 @@
                 <img v-bind:src="require('/public/images/photo1.jpg')" alt="" width="20%" height="20%"/>
             </div>
 
-            <div class="fio">
-                <p>{{ fio }}</p>
-            </div>
+            <p class="fio">
+                {{ fio }}
+            </p>
 
             <transition name="fade">
                 <p v-if="isPhoneVisible">89211834241</p>
@@ -31,13 +31,13 @@
         },
         methods: {
             togglePhoneVisibility: function () {
-               this.isPhoneVisible = !this.isPhoneVisible;
+                this.isPhoneVisible = !this.isPhoneVisible;
             }
         }
     }
 </script>
 
-<style scoped>
+<style>
     .fade-enter-active, .fade-leave-active {
         transition: opacity .5s;
     }
