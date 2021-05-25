@@ -1,9 +1,9 @@
 <template>
     <header>
         <div class="menu-container">
-                <li @click="$router.push('/')"><a>Биография</a></li>
-                <li @click="$router.push('/myachievements')"><a>Достижения</a></li>
-                <li @click="$router.push('/mygame')"><a>Викторина</a></li>
+                <router-link to="/">Биография</router-link>
+                <router-link to="/achievements">Достижения</router-link>
+                <router-link to="/game">Викторина</router-link>
         </div>
     </header>
 </template>

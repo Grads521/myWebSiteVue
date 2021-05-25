@@ -1,22 +1,22 @@
 import VueRouter from 'vue-router'
 
-import MyInfo from '../pages/myInfo'
-import MyAchievements from '../pages/myAchievements'
-import MyGame from '../pages/myGame'
+import MyInfo from '../pages/info'
+import MyAchievements from '../pages/achievements'
+import MyGame from '../pages/game'
 
 export default new VueRouter({
-    mode: 'history',
+    mode:'history',
     routes: [
         {
             path: '/',
             component: MyInfo
         },
         {
-            path: '/myachievements',
+            path: '/achievements',
             component: MyAchievements
         },
         {
-            path: '/mygame',
+            path: '/game',
             component: MyGame
         }
     ]
