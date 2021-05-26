@@ -6,7 +6,7 @@
             </li>
             <textarea v-model="newChapter" cols="40" rows="3"></textarea>
         </ul>
-        <button v-on:click="chapters.push(newChapter)">Добавить</button>
+        <button @click="addChapter">Добавить</button>
         <button @click="cleanTextarea">Очистить</button>
     </main>
 </template>
@@ -20,8 +20,11 @@
             }
         },
         methods: {
+            addChapter() {
+                this.chapters.push(this.newChapter);
+            },
             cleanTextarea() {
-                this.newChapter = "";
+                this.newChapter = '';
             }
         }
     }
@@ -36,5 +39,4 @@
     button {
         margin-left: 20px;
     }
-
 </style>
