@@ -1,21 +1,25 @@
 <template>
     <main>
         <div class="wrapper">
-        <div class="nameGame">{{ title }} </div>
-        <button class="startButton">Старт</button>
-        <div v-for="question in questions" :key="question.text">
-            <div class="question">
-                {{ question.text }}
-            </div>
-            <div class="allAnswer">
-                <div v-for="answer in question.answers" :key="answer.text" class="answer">
-                    <input type="radio">
-                    <label>{{ answer.text }}</label>
+            <div class="nameGame">{{ title }} </div>
+            <button @click="startGame" v-if="visibleStartButton" class="startButton">Старт</button>
+                <div v-if="visibleGame">
+                    <div v-for="(question, index) in questions" :key="question.text">
+                        <div v-if="index === questionIndex">
+                            <div class="question">
+                                {{ question.text }}
+                            </div>
+                            <div class="allAnswer">
+                                <div v-for="(answer, i) in question.answers" :key="answer.text" class="answer">
+                                    <input type="radio" :id="i" :value="i" v-bind:name="index">
+                                    <label :for="i">{{ answer.text }}</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button @click="acceptButton">Потвердить</button>
                 </div>
             </div>
-        </div>
-        <button>Потвердить</button>
-        </div>
     </main>
 </template>
 
@@ -66,9 +70,22 @@
                             {text: '100', correct: true},
                         ]
                     }
-                ]
+                ],
+                visibleGame:false,
+                visibleStartButton:true,
+                questionIndex: 0,
+                id: null,
             }
-        }
+        },
+        methods: {
+            startGame() {
+                this.visibleGame = true;
+                this.visibleStartButton = false;
+            },
+            acceptButton() {
+                this.questionIndex++;
+            }
+        },
     }
 </script>
 
