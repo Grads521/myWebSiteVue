@@ -1,37 +1,28 @@
 <template>
-    <main class="wrapper">
-        <h1> {{ game.title }} </h1>
-        <div v-for="(question, index) in game.questions" :key="question.text">
-            <div v-show="index === questionIndex">
-                <h2> {{ question.text }} </h2>
-                <ol>
-                    <li v-for="answer in question.answers" :key="answer.text">
-                        <label>
-                            <input type="radio"
-                            v-bind:value="answer.correct"
-                            v-bind:name="index"
-                            v-model="userAnswers[index]"> {{ answer.text }}
-                        </label>
-                    </li>
-                </ol>
-
-                <button class="prev" v-if="questionIndex > 0" @click="prev">Предыдущий</button>
-                <button @click="next">Следующий</button>
+    <main>
+        <div class="wrapper">
+        <div class="nameGame">{{ title }} </div>
+        <button class="startButton">Старт</button>
+        <div v-for="question in questions" :key="question.text">
+            <div class="question">
+                {{ question.text }}
+            </div>
+            <div class="allAnswer">
+                <div v-for="answer in question.answers" :key="answer.text" class="answer">
+                    <input type="radio">
+                    <label>{{ answer.text }}</label>
+                </div>
             </div>
         </div>
-        <div v-show="questionIndex === game.questions.length">
-            <h2>
-                Викторина завершена
-            </h2>
-            <p>
-                Количество правильных ответов: {{ score() }} / {{ game.questions.length }}
-            </p>
+        <button>Потвердить</button>
         </div>
     </main>
 </template>
 
 <script>
-    let game = {
+    export default {
+        data() {
+            return {
                 title: 'Кто хочет стать миллионером?',
                 questions: [
                     {
@@ -76,54 +67,34 @@
                         ]
                     }
                 ]
-    };
-
-    export default {
-        data() {
-            return {
-                game: game,
-                questionIndex: 0,
-                userAnswers: Array(game.questions.length).fill(false)
-            }
-        },
-        methods: {
-            next() {
-                this.questionIndex++;
-            },
-            prev() {
-                this.questionIndex--;
-            },
-            score() {
-                return this.userAnswers.filter(function(val) { return val }).length;
             }
         }
     }
 </script>
 
 <style scoped>
-    main {
-        position: relative;
-        background-color: #cd9c71;
-        width: 100%;
-        height: 100vh;
-        line-height: 1.4;
-        list-style: none;
-    }
-    main .wrapper {
+    .wrapper {
         padding: 15px;
     }
-    main .nameGame {
+    .nameGame {
         font-size: 34px;
         color: #130621;
         padding-top: 15px;
     }
-    main li {
-        list-style: none;
+    .startButton {
+        margin-top: 20px;
     }
-    button {
-        margin-top: 10px;
+    .question {
+        font-size: 26px;
+        color: #5e3b8b;
     }
-    .prev {
-        margin-right: 10px;
+    .allAnswer {
+        display: table;
+        font-size: 18px;
+    }
+    .answer {
+        display: table-cell;
     }
 </style>
+
+

@@ -22,6 +22,7 @@
         methods: {
             addChapter() {
                 this.chapters.push(this.newChapter);
+                this.newChapter = '';
             },
             cleanTextarea() {
                 this.newChapter = '';
